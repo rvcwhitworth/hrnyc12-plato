@@ -33,7 +33,7 @@ class App extends React.Component {
 ReactDOM.render((
 <MuiThemeProvider>
   <HashRouter>
-    <App />
+    <App style={{textAlign:center}}/>
   </HashRouter>
 </MuiThemeProvider>
 ), document.getElementById('app'));
