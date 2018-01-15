@@ -1,36 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import List from './components/List.jsx';
+import axios from 'axios';
+import { Switch, Route, HashRouter } from 'react-router-dom';
+import LandingPage from './components/LandingPage.jsx';
+import CreateEvent from './components/CreateEvent.jsx';
+import EventMap from './components/EventMap.jsx';
+import LoadingPage from './components/LoadingPage.jsx';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      items: []
-    }
-  }
-
-  componentDidMount() {
-    $.ajax({
-      url: '/items', 
-      success: (data) => {
-        this.setState({
-          items: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
   }
 
   render () {
-    return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
+    return (
+      <main>
+        
+        <Switch>
+          <Route exact path="/" component={LandingPage}/>
+          <Route exact path="/create" component={CreateEvent}/>
+          <Route exact path="/event/:number" component={EventMap}/>   
+          <Route exact path="/submit" component={LoadingPage}/>  
+        </Switch>
+      </main>
+    );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+
+ReactDOM.render((
+<MuiThemeProvider>
+  <HashRouter>
+    <App style={{textAlign:center}}/>
+  </HashRouter>
+</MuiThemeProvider>
+), document.getElementById('app'));

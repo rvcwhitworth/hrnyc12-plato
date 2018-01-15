@@ -1,0 +1,33 @@
+body {
+  font-family: 'Poppins', sans-serif
+}
+
+.addAttendee {
+  padding: 1% 2%;
+  margin: 1% 1%;
+  width: 40%;
+  min-width: 40%;
+  float: left;
+}
+
+.attendeeInfo {
+  height: auto;
+  width: 80%;
+  min-width: 80%;
+}
+
+ul {
+  list-style: none;
+}
+
+.createEvent, .createEvent form {
+  height: auto;
+}
+
+input {
+  margin: .5%;
+}
+
+body {
+  background-color: #FFEBEE
+}

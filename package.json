@@ -2,8 +2,9 @@
   "name": "WAYN",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/server/index.js",
   "scripts": {
+    "start": "npm run server-dev && react-dev",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js"
   },
@@ -17,11 +18,22 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.17.2",
-    "express": "^4.15.0",
+    "bookshelf": "^0.12.0",
+    "express": "^4.16.2",
     "jquery": "^3.1.1",
-    "mysql": "^2.13.0",
+    "knex": "^0.13.0",
+    "material-ui": "^0.20.0",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.1",
+    "ngrok": "^2.2.24",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-google-maps": "^9.4.3",
+    "react-router-dom": "^4.2.2",
+    "recompose": "^0.26.0",
+    "twilio": "^3.11.0"
   }
 }
